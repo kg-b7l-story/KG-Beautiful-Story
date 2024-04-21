@@ -23,14 +23,15 @@ iframe {
 :root {
 	--white: #fff;
 	--black: #444;
-	--red: #fc7f7f;
-	--blue: #86abda;
+	--red: #de7575;
+	--blue: #96b4cc;
 
 	--page-inner-width: 1200px;
 	--page-padding-inline: 16px;
 }
 
 body {
+	line-height: 1.6;
 	font-family: sans-serif;
 	color: var(--black);
 }
@@ -53,42 +54,66 @@ body {
 	margin-top: 64px;
 }
 
+.section > :first-child {
+	margin-top: 0;
+}
+
+.section > :last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+	.section + .section {
+		margin-top: 48px;
+	}
+}
+
 .site-header {
-	position: relative;
-	padding-top: min(400px, calc(400 / 1200 * 100%));
-	background-repeat: no-repeat;
-	background-size: min(1200px, 100vw);
-	background-position: top 0 center;
-	background-image: url("../img/header.jpg");
+	position: sticky;
+	top: 0;
 }
 
 .site-header__title {
-	position: sticky;
-	top: 0;
-	margin-block: 48px;
+	margin-block: 0px;
 	padding-block: 16px;
 	letter-spacing: 0.04em;
 	line-height: 1.3;
+	font-weight: 700;
+	font-size: 32px;
 	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.site-header__title > a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.site-header__title > a:is(:hover, :focus) {
+	text-decoration: underline;
 }
 
 @media (max-width: 480px) {
 	.site-header__title {
-		margin-block: 24px;
 		padding-block: 8px;
 		font-size: 24px;
 	}
-
 }
 
 .site-main {
 	flex: 1 1 auto;
+	padding-top: 64px;
 	padding-bottom: 80px;
 }
 
+@media (max-width: 480px) {
+	.site-main {
+		padding-top: 48px;
+		padding-bottom: 64px;
+	}
+}
+
 .site-footer {
-	padding-block: 16px;
-	padding-inline: var(--page-padding-inline);
+	flex: 0 0 auto;
 }
 
 .site-footer__logo {
@@ -96,6 +121,57 @@ body {
 	width: 240px;
 	max-width: 100%;
 	margin: 0 auto;
+	padding-block: 16px;
+	padding-inline: var(--page-padding-inline);
+}
+
+.footer-site-map {
+	padding-block: 16px;
+	padding-inline: var(--page-padding-inline);
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.footer-site-map * {
+	color: inherit;
+}
+
+.site-map {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 32px;
+	margin-block: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-map__item a {
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.site-map__item a:is(:hover, :focus) {
+	text-decoration: underline;
+}
+
+.heading {
+	letter-spacing: 0.02em;
+	font-weight: 700;
+}
+
+.heading.heading--2 {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+	.heading.heading--2 {
+		margin-bottom: 16px;
+	}
+}
+
+.lead-text {
+	font-size: 24px;
 }
 
 .embed-list {
@@ -108,10 +184,16 @@ body {
 	list-style: none;
 }
 
+@media (max-width: 480px) {
+	.embed-list {
+		margin-block: 16px;
+	}
+}
+
 
 .link-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 	gap: 32px;
 	margin-block: 24px;
 	margin-inline: 0;
@@ -121,12 +203,12 @@ body {
 
 .link-item {
 	--border-color: var(--red);
-	border-radius: 8px;
-	border-width: 0 0 2px 4px;
+	border-radius: 0 4px 4px 0;
+	border-width: 0 0 0 4px;
 	border-style: solid;
 	border-color: transparent transparent transparent var(--border-color);
 	background-color: var(--white);
-	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.05);
 	transition: border-color 0.3s ease-out;
 }
 
@@ -138,10 +220,6 @@ body {
 	--border-color: var(--blue);
 }
 
-.link-item:has(a:is(:hover, :focus)) {
-	border-color: transparent transparent var(--border-color) var(--border-color);
-}
-
 .link-item a {
 	display: flex;
 	align-items: center;
@@ -149,7 +227,7 @@ body {
 	width: 100%;
 	padding: 16px;
 	text-decoration: none;
-	font-size: 24px;
+	font-size: 18px;
 	color: inherit;
 }
 
@@ -161,9 +239,42 @@ body {
 	text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+	.link-list {
+		margin-block: 16px;
+	}
+}
 
 .m-plus-rounded-1c-bold {
 	font-family: "M PLUS Rounded 1c", sans-serif;
 	font-weight: 700;
 	font-style: normal;
+}
+
+
+:where(.simple-template) {
+	h2 {
+		margin-top: 48px;
+		margin-bottom: 16px;
+		font-weight: 700;
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	:where(.simple-template) {
+		h2 {
+			margin-top: 32px;
+			margin-bottom: 12px;
+			font-size: 20px;
+		}
+
+		p {
+			font-size: 14px;
+		}
+	}
 }
