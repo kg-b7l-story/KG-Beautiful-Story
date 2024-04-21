@@ -6,6 +6,8 @@
 	<title>KG Buautiful Story</title>
 	<meta name="description" content="Music">
 
+	<base href="./index.html">
+
 	<meta property="og:site_name" content="KG Buautiful Story">
 	<meta property="og:title" content="KG Buautiful Story">
 	<meta property="og:description" content="Music">
@@ -14,6 +16,14 @@
 	<meta property="og:image" content="https://kg-b7l-story.github.io/KG-Beautiful-Story/assets/img/ogp.jpg">
 
 	<meta name="twitter:card" content="summary_large_image">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MFLRN9V2');</script>
+	<!-- End Google Tag Manager -->
 
 	<link rel="stylesheet" href="./assets/css/normalize.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
@@ -31,23 +41,30 @@
 </head>
 <body class="body">
 
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFLRN9V2"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 	<div class="container">
 
 		<header class="site-header">
-			
+			<h1 class="site-header__title m-plus-rounded-1c-bold inner">KG Buautiful Story</h1>
 		</header>
 		<!-- /.site-header -->
 
 		<main class="site-main inner">
 
-			<h1 class="site-header__title m-plus-rounded-1c-bold">KG Buautiful Story</h1>
+			<section class="section">
+				<p class="lead-text">Music</p>
+			</section>
 
 			<section class="section">
 				<h2 class="heading heading--2">Recent</h2>
 
 				<ul class="embed-list">
 					<li class="embed-item">
-						<iframe width="584" height="328" src="https://www.youtube.com/embed/0Xz0GVPS51U?si=AEMfTeJjHhqsXNx_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe id="he's-now-say" width="584" height="328" src="https://www.youtube.com/embed/0Xz0GVPS51U?si=AEMfTeJjHhqsXNx_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</li>
 				</ul>
 
@@ -55,35 +72,53 @@
 			<!-- /.section -->
 
 			<section class="section">
-				<h2 class="heading heading--2">Link</h2>
+				<h2 class="heading heading--2">Music</h2>
 				<ul class="link-list">
 					<li class="link-item link-item--music">
-						<a href="https://www.youtube.com/@kg_b7l_story" target="_blank">
+						<a href="https://www.youtube.com/@kg_b7l_story" target="_blank" data-site="YouTube">
 							<i class="fa-brands fa-youtube"></i><span>YouTube</span>
 						</a>
 					</li>
 					<li class="link-item link-item--music">
-						<a href="https://soundcloud.com/kg_b7l_story" target="_blank">
+						<a href="https://soundcloud.com/kg_b7l_story" target="_blank" data-site="SoundCloud">
 							<i class="fa-brands fa-soundcloud"></i><span>SoundCloud</span>
 						</a>
 					</li>
 					<li class="link-item link-item--music">
-						<a href="https://kg-b7l-story.bandcamp.com/" target="_blank">
+						<a href="https://www.dailymotion.com/kg_b7l_story/videos" target="_blank" data-site="Dairymotion">
+							<i class="fa-brands fa-dailymotion"></i><span>Dairymotion</span>
+						</a>
+					</li>
+					<li class="link-item link-item--music">
+						<a href="https://www.reverbnation.com/kgbeautifulstory" target="_blank" data-site="ReverbNation">
+							<i class="fa-solid fa-music"></i><span>ReverbNation</span>
+						</a>
+					</li>
+					<li class="link-item link-item--music">
+						<a href="https://kg-b7l-story.bandcamp.com/" target="_blank" data-site="Bandcamp">
 							<i class="fa-brands fa-bandcamp"></i><span>Bandcamp</span>
 						</a>
 					</li>
+				</ul>
+				<!-- /.link-list -->
+			</section>
+			<!-- /.section -->
+
+			<section class="section">
+				<h2 class="heading heading--2">Social Media</h2>
+				<ul class="link-list">
 					<li class="link-item link-item--social-media">
-						<a href="https://twitter.com/kg_b7l_story" target="_blank">
+						<a href="https://twitter.com/kg_b7l_story" target="_blank" data-site="X">
 							<i class="fa-brands fa-x-twitter"></i><span>X</span>
 						</a>
 					</li>
 					<li class="link-item link-item--social-media">
-						<a href="https://www.instagram.com/kg_b7l_story/" target="_blank">
+						<a href="https://www.instagram.com/kg_b7l_story/" target="_blank" data-site="Instagram">
 							<i class="fa-brands fa-instagram"></i><span>Instagram</span>
 						</a>
 					</li>
 					<li class="link-item link-item--social-media">
-						<a href="https://www.facebook.com/kg.b7l.story/" target="_blank">
+						<a href="https://www.facebook.com/kg.b7l.story/" target="_blank" data-site="Facebook">
 							<i class="fa-brands fa-facebook"></i><span>Facebook</span>
 						</a>
 					</li>
@@ -95,8 +130,15 @@
 		</main>
 		<!-- /.site-main -->
 
-		<footer class="site-footer inner">
-			<img class="site-footer__logo" src="./assets/img/logo.svg" alt="KG Beautiful Story">
+		<footer class="site-footer">
+			<div class="footer-site-map">
+				<ul class="site-map inner">
+					<li class="site-map__item"><a href="./privacy-policy.html">Privacy Policy</a></li>
+				</ul>
+			</div>
+			<div class="inner">
+				<img class="site-footer__logo" src="./assets/img/logo.svg" alt="KG Beautiful Story">
+			</div>
 		</footer>
 		<!-- /.site-footer -->
 
