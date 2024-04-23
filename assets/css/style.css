@@ -471,6 +471,15 @@ a.breadcrumbs__text:is(:hover, :focus) {
 	text-align: left;
 }
 
+.credit-table a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.credit-table a:is(:hover, :focus) {
+	text-decoration: underline;
+}
+
 
 @media (max-width: 480px) {
 	.credit-table {
@@ -509,6 +518,7 @@ a.breadcrumbs__text:is(:hover, :focus) {
 	white-space: break-spaces;
 	letter-spacing: 0.04em;
 	line-height: 1.8;
+	font-family: sans-serif;
 	font-size: 16px;
 }
 
