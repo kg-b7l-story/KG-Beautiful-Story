@@ -260,6 +260,7 @@ body {
 
 @media (max-width: 480px) {
 	.link-list {
+		gap: 24px;
 		margin-block: 16px;
 	}
 }
