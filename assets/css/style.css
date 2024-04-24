@@ -36,11 +36,16 @@ iframe {
 	--z-index-header: 100;
 }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 body {
 	line-height: 1.6;
 	font-family: sans-serif;
 	color: var(--black);
-	overflow-x: hidden;
+	background-color: var(--white);
 }
 
 
@@ -351,7 +356,10 @@ body {
 }
 
 .music__link:is(:hover, :focus) .music__image {
-	rotate: 8deg;
+	box-shadow: 0 0 12px 8px rgba(0, 0, 0, 0.16);
+	rotate: 4deg;
+	scale: 1.05;
+	z-index: 1;
 }
 
 .music__image-wrapper {
@@ -371,15 +379,26 @@ body {
 	background-size: contain;
 	background-image: url("../img/record.png");
 	translate: -50% -50%;
+	filter: brightness(0.8) hue-rotate(0deg) saturate(1.5);
 	transition: top 0.3s ease-out, left 0.3s ease-out;
 	z-index: -1;
 }
 
+.music:nth-child(2n + 2) .music__image-wrapper::after {
+	filter: brightness(0.8) hue-rotate(90deg) saturate(1.5);
+}
+
+.music:nth-child(3n + 3) .music__image-wrapper::after {
+	filter: brightness(0.8) hue-rotate(180deg) saturate(1.5);
+}
+
+.music:nth-child(4n + 4) .music__image-wrapper::after {
+	filter: brightness(0.8) hue-rotate(270deg) saturate(1.5);
+}
+
 .music__link:is(:hover, :focus) .music__image-wrapper::after {
-	top: calc(50% - 90px);
 	top: calc(50% - 32%);
-	left: calc(50% + 12px);
-	left: calc(50% + 4.3%);
+	left: calc(50% + 3%);
 	animation: record-spin 3s linear infinite;
 }
 
@@ -397,7 +416,7 @@ body {
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	object-position: center;
-	transition: rotate 0.3s ease-out;
+	transition: rotate 0.3s ease-out, box-shadow 0.3s ease-out, scale 0.3s ease-out;
 }
 
 .music__title {
